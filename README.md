@@ -16,7 +16,26 @@ Welcome to Nushell 0.21.0 (type 'help' for more info)
 
 ## CLI functions usage
 ```nu
-> find_files_acceeded_since! . .nu 1wk
+❯ pattern_exists_in_array? [Column1, Value1, toto1] toto1
+true
+❯ pattern_exists_in_array? [Column1, Value1, toto1] titi
+false
+
+
+❯ pattern_exists_in_json? season-1819.json toto
+false
+❯ pattern_exists_in_json? season-1819.json 2019
+true
+
+❯ pattern_exists_in_csv? season-1819.csv toto
+false
+❯ pattern_exists_in_csv? season-1819.csv 2019
+true
+
+❯ if $"(pattern_exists_in_csv? season-1819.csv 2019)" != true { echo 'pattern not found' } { echo 'pattern found in file' }
+pattern found in file
+
+❯ find_files_acceeded_since! . .nu 1wk
 ───┬─────────────────────────────────────────────────────
  0 │ nushell-az-functions/az_functions.nu|28 mins ago    
  1 │ nushell-odds-api-client/odds-api-ctl.nu|14 mins ago 
