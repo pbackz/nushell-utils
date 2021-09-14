@@ -1,3 +1,5 @@
+**Note: This project is now archived. The new URL of project is https://github.com/e-monkeys-tech/nushell-utils. This in order to allow the mutualization of the secrets used by the actions of the CI for all the repositories of the organization and no longer unitarily**
+
 # Nushell useful snippets
 
 ## Build project with rust toolchain
